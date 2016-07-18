@@ -598,7 +598,7 @@ class client:
             'size': (None, fileSize),
             'mediatype': (None, 'pic' if isPicture else 'doc'),
             'uploadmediarequest': (None, json.dumps({
-                'BaseRequest': self.loginInfo['BaseRequest'],
+                'BaseRequest': {k: v.decode('ascii') for k, v in self.loginInfo['BaseRequest'].items()},
                 'ClientMediaId': int(time.time()),
                 'TotalLen': fileSize,
                 'StartPos': 0,
