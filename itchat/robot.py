@@ -50,17 +50,18 @@ def get_reply(msg, s, client, isGroupChat = False, cmdPrint = PRINT_ON_CMD):
                     reply = r
                     getReply = True
                     break
-        if not getReply: reply = 'I received: %s'%content
+        # if not getReply: reply = 'I received: %s'%content
+        if not getReply: reply = 'PIKAPIKA'
     elif msg['MsgType'] == 'Map':
         return 'You are there!'
         if not isGroupChat and cmdPrint: 
             out.print_line('%s is at %s'%(s.find_nickname(msg['FromUserName']), msg['Content']))
     elif msg['MsgType'] == 'Picture':
-        return 'Picture received!'
+        return '你猜我看得懂图片吗?!'
         if not isGroupChat and cmdPrint: 
             out.print_line('%s sent a picture [%s]'%(s.find_nickname(msg['FromUserName']), msg['Content']))
     elif msg['MsgType'] == 'Recording':
-        return 'Nice Voice!'
+        return '听不懂!'
         if not isGroupChat and cmdPrint: 
             out.print_line('%s sent a recording'%(s.find_nickname(msg['FromUserName'])))
     elif msg['MsgType'] == 'Card':

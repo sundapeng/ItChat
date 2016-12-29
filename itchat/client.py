@@ -7,7 +7,8 @@ import config, storage, out, log, tools
 
 try:
     from plugin.QRCode import QRCode
-    CMD_QRCODE = True
+    # CMD_QRCODE = True
+    CMD_QRCODE = False
 except:
     CMD_QRCODE = False
 
@@ -64,7 +65,7 @@ class WeChatClient:
         try:
             url = '%s/qrcode/%s'%(BASE_URL, self.uuid)
             r = self.s.get(url, stream = True)# params = payloads, headers = HEADER, 
-            QR_DIR = os.path.join(config.QR_DIR, 'QR.jpg')
+            QR_DIR = os.path.join(config.QR_DIR, 'qr.png')
             with open(QR_DIR, 'wb') as f: f.write(r.content)
             if CMD_QRCODE:
                 q = QRCode(QR_DIR, 37, 3, 'BLACK')

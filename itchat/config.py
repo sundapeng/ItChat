@@ -1,7 +1,7 @@
 import os, platform
 
 DIR = os.getcwd()
-QR_DIR = 'log'
+QR_DIR = '/usr/share/rpimonitor/web/img'
 LOG_DIR = 'log'
 PIC_DIR = os.path.join('storage', 'picture')
 VID_DIR = os.path.join('storage', 'video')

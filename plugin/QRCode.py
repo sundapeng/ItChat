@@ -35,5 +35,5 @@ class QRCode():
 
 if __name__ == '__main__':
     # 37 is for picture size without padding, 3 is padding
-    q = QRCode(os.path.join(os.path.pardir, 'log', 'QR.jpg'), 37, 3, 'BLACK')
+    q = QRCode(os.path.join(os.path.pardir, 'log', 'qr.jpg'), 37, 3, 'BLACK')
     q.print_qr()
